@@ -52,8 +52,12 @@ VOID OnPaint(HDC hdc)
 
     //Draw top triangle
     SolidBrush solidWhiteBrush(Color(255, 255, 255, 255));
-    Point triangleArray[] = { Point(448, 227), Point(438, 240), Point(456, 240) };
+    Point triangleArray[] = { Point(449, 227), Point(439, 240), Point(457, 240) };
     graphics.FillPolygon(&solidWhiteBrush, triangleArray, 3);
+
+    //Draw upsidedown triangle
+    Point upsidedowTriangleArray[] = { Point(449, 224), Point(441, 217), Point(456, 217) };
+    graphics.FillPolygon(&solidWhiteBrush, upsidedowTriangleArray, 3);
 
 
     //Numbers
@@ -72,7 +76,7 @@ VOID OnPaint(HDC hdc)
     graphics.DrawString(L"20", -1, &font, pointRight2, &solidWhiteBrush);
 
     //Draw Arc
-
+    graphics.DrawArc(&whitePen, 359, 226, 180, 180, 217, 105);
 
 }
 
