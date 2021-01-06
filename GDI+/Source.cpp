@@ -11,6 +11,7 @@ VOID OnPaint(HDC hdc)
     Pen      pen(Color(255, 255, 0, 255));
     Pen      bluePen(Color(255, 0, 0, 255));
     Pen whitePen(Color(255, 255, 255, 255));
+    Pen blackPen(Color(255, 0, 0, 0));
     SolidBrush solidWhiteBrush(Color(255, 255, 255, 255));
     SolidBrush solidYellowBrush(Color(255, 255, 204, 0));
     graphics.SetSmoothingMode(SmoothingModeAntiAlias);
@@ -63,15 +64,18 @@ VOID OnPaint(HDC hdc)
     int bottomMarker20Line = graphics.DrawLine(&whitePen, 415, 355, 483, 355);
 
 
-    //Draw top triangle
-    Point triangleArray[] = { Point(449, 227), Point(439, 240), Point(457, 240) };
+    //Top triangle
+    Point triangleArray[] = { Point(448, 227), Point(439, 240), Point(457, 240) };
     graphics.FillPolygon(&solidWhiteBrush, triangleArray, 3);
 
-    //Draw upsidedown triangle
+    Point triangleArray2[] = { Point(448, 227), Point(439, 240), Point(457, 240), Point(449, 227) };
+    graphics.DrawLines(&blackPen, triangleArray2, 4);
+
+    //Upsidedown triangle
     Point upsidedowTriangleArray[] = { Point(449, 224), Point(441, 217), Point(456, 217) };
     graphics.FillPolygon(&solidWhiteBrush, upsidedowTriangleArray, 3);
 
-    //Draw Arc
+    //Arc
     graphics.DrawArc(&whitePen, 359, 226, 180, 180, 217, 105);
 
     //Top Numbers
@@ -102,9 +106,12 @@ VOID OnPaint(HDC hdc)
     graphics.DrawString(L"20", -1, &font, pointBottomLeft2, &solidWhiteBrush);
     graphics.DrawString(L"20", -1, &font, pointBottomRight2, &solidWhiteBrush);
 
-   //Draw Miniature Plane
-    Point miniAirplaneArray[] = { Point(449, 300), Point(399, 328), Point(449, 317), Point(499, 328) }; //2nd Point is 20 less then 1st. 4th point is 20 more then 1st
+   //Miniature Airplane
+    Point miniAirplaneArray[] = { Point(449, 300), Point(399, 328), Point(449, 317), Point(499, 328) }; // X var = 2nd Point is 20 less then 1st. 4th point is 20 more then 1st
     graphics.FillPolygon(&solidYellowBrush, miniAirplaneArray, 4);
+    //Miniature Airplane Border
+    Point miniAirplaneArray2[] = { Point(449, 300), Point(399, 328), Point(449, 317), Point(499, 328), Point(449, 300) };
+    graphics.DrawLines(&blackPen, miniAirplaneArray2, 5);
 
 }
 
