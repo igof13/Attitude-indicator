@@ -53,7 +53,6 @@ VOID OnPaint(HDC hdc)
     */
     
     //Bottom white marks
-
     int bottomSmallLine = graphics.DrawLine(&whitePen, 440, 306, 457, 306);
     int bottomMiddLine = graphics.DrawLine(&whitePen, 432, 313, 466, 313);
     int bottomSmallLine2 = graphics.DrawLine(&whitePen, 440, 320, 457, 320);
@@ -66,17 +65,17 @@ VOID OnPaint(HDC hdc)
 
     //Top triangle
     Point triangleArray[] = { Point(448, 227), Point(439, 240), Point(457, 240) };
-    graphics.FillPolygon(&solidWhiteBrush, triangleArray, 3);
-
+    int topTriangle = graphics.FillPolygon(&solidWhiteBrush, triangleArray, 3);
+    //Top triangle border
     Point triangleArray2[] = { Point(448, 227), Point(439, 240), Point(457, 240), Point(449, 227) };
-    graphics.DrawLines(&blackPen, triangleArray2, 4);
+    int topTriangleBorder = graphics.DrawLines(&blackPen, triangleArray2, 4);
 
     //Upsidedown triangle
     Point upsidedowTriangleArray[] = { Point(449, 224), Point(441, 217), Point(456, 217) };
-    graphics.FillPolygon(&solidWhiteBrush, upsidedowTriangleArray, 3);
+    int upsidedownTriangle = graphics.FillPolygon(&solidWhiteBrush, upsidedowTriangleArray, 3);
 
     //Arc
-    graphics.DrawArc(&whitePen, 359, 226, 180, 180, 217, 105);
+    int arc = graphics.DrawArc(&whitePen, 359, 226, 180, 180, 217, 105);
 
     //Top Numbers
     FontFamily  fontFamily(L"Times New Roman");
@@ -84,34 +83,37 @@ VOID OnPaint(HDC hdc)
     PointF      pointLeft(402.0f, 321);
     PointF      pointRight(482.0f, 321.0f);
 
-    graphics.DrawString(L"10", -1, &font, pointLeft, &solidWhiteBrush);
-    graphics.DrawString(L"10", -1, &font, pointRight, &solidWhiteBrush);
+    int number10Left = graphics.DrawString(L"10", -1, &font, pointLeft, &solidWhiteBrush);
+    int number10Right = graphics.DrawString(L"10", -1, &font, pointRight, &solidWhiteBrush);
 
     PointF      pointLeft2(402.0f, 349.0f);
     PointF      pointRight2(482.0f, 349.0f);
 
-    graphics.DrawString(L"20", -1, &font, pointLeft2, &solidWhiteBrush);
-    graphics.DrawString(L"20", -1, &font, pointRight2, &solidWhiteBrush);
+    int number20Left = graphics.DrawString(L"20", -1, &font, pointLeft2, &solidWhiteBrush);
+    int number20Right = graphics.DrawString(L"20", -1, &font, pointRight2, &solidWhiteBrush);
 
     //Bottom Numbers
     PointF      pointBottomLeft(402.0f, 268.0f);
     PointF      pointBottomRight(482.0f, 268.0f);
 
-    graphics.DrawString(L"10", -1, &font, pointBottomLeft, &solidWhiteBrush);
-    graphics.DrawString(L"10", -1, &font, pointBottomRight, &solidWhiteBrush);
+    int number10LeftBottom = graphics.DrawString(L"10", -1, &font, pointBottomLeft, &solidWhiteBrush);
+    int number10RightBottom = graphics.DrawString(L"10", -1, &font, pointBottomRight, &solidWhiteBrush);
 
     PointF      pointBottomLeft2(402.0f, 240.0f);
     PointF      pointBottomRight2(482.0f, 240.0f);
 
-    graphics.DrawString(L"20", -1, &font, pointBottomLeft2, &solidWhiteBrush);
-    graphics.DrawString(L"20", -1, &font, pointBottomRight2, &solidWhiteBrush);
+    int number20LeftBottom = graphics.DrawString(L"20", -1, &font, pointBottomLeft2, &solidWhiteBrush);
+    int number20RightBottom = graphics.DrawString(L"20", -1, &font, pointBottomRight2, &solidWhiteBrush);
 
    //Miniature Airplane
     Point miniAirplaneArray[] = { Point(449, 300), Point(399, 328), Point(449, 317), Point(499, 328) }; // X var = 2nd Point is 20 less then 1st. 4th point is 20 more then 1st
-    graphics.FillPolygon(&solidYellowBrush, miniAirplaneArray, 4);
+    int miniAirplane = graphics.FillPolygon(&solidYellowBrush, miniAirplaneArray, 4);
     //Miniature Airplane Border
     Point miniAirplaneArray2[] = { Point(449, 300), Point(399, 328), Point(449, 317), Point(499, 328), Point(449, 300) };
-    graphics.DrawLines(&blackPen, miniAirplaneArray2, 5);
+    int miniAirplaneBorder = graphics.DrawLines(&blackPen, miniAirplaneArray2, 5);
+
+    //Wings
+
 
 }
 
