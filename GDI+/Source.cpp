@@ -24,7 +24,20 @@ VOID OnPaint(HDC hdc)
 
 
     //White marks
-    SolidBrush solidWhiteBrush(Color(255, 255, 255, 255));
+
+    Pen whitePen(Color(255, 255, 255, 255));
+    int centerLine = graphics.DrawLine(&whitePen, 350, 301, 544, 301);
+    int smallLine = graphics.DrawLine(&whitePen, 440, 295, 457, 295);
+    int middLine = graphics.DrawLine(&whitePen, 432, 288, 466, 288);
+    int smallLine2 = graphics.DrawLine(&whitePen, 440, 281, 457, 281);
+    int marker10Line = graphics.DrawLine(&whitePen, 415, 274, 483, 274);
+    int smallLine3 = graphics.DrawLine(&whitePen, 440, 267, 457, 267);
+    int middLine2 = graphics.DrawLine(&whitePen, 432, 260, 466, 260);
+    int smallLine4 = graphics.DrawLine(&whitePen, 440, 253, 457, 253);
+    int marker20Line = graphics.DrawLine(&whitePen, 415, 246, 483, 246);
+
+    //Marks made with rectangule for reference
+    /*SolidBrush solidWhiteBrush(Color(255, 255, 255, 255));
     int middleRect = graphics.FillRectangle(&solidWhiteBrush, 350, 300, 195, 2);
     int smallRect = graphics.FillRectangle(&solidWhiteBrush, 440, 294, 17, 2);
     int midRect = graphics.FillRectangle(&solidWhiteBrush, 432, 287, 34, 2);
@@ -34,8 +47,11 @@ VOID OnPaint(HDC hdc)
     int midRect2 = graphics.FillRectangle(&solidWhiteBrush, 432, 259, 34, 2);
     int smallRect4 = graphics.FillRectangle(&solidWhiteBrush, 440, 252, 17, 2);
     int marker20Rect = graphics.FillRectangle(&solidWhiteBrush, 415, 245, 68, 1); //Line using only one pixel as example
+    */
+    
 
     //Draw top triangle
+    SolidBrush solidWhiteBrush(Color(255, 255, 255, 255));
     Point triangleArray[] = { Point(448, 227), Point(438, 240), Point(456, 240) };
     graphics.FillPolygon(&solidWhiteBrush, triangleArray, 3);
 
@@ -44,13 +60,13 @@ VOID OnPaint(HDC hdc)
     FontFamily  fontFamily(L"Times New Roman");
     Font        font(&fontFamily, 10, FontStyleRegular, UnitPixel);
     PointF      pointLeft(402.0f, 268.0f);
-    PointF      pointRight(481.0f, 268.0f);
+    PointF      pointRight(482.0f, 268.0f);
 
     graphics.DrawString(L"10", -1, &font, pointLeft, &solidWhiteBrush);
     graphics.DrawString(L"10", -1, &font, pointRight, &solidWhiteBrush);
 
     PointF      pointLeft2(402.0f, 240.0f);
-    PointF      pointRight2(481.0f, 240.0f);
+    PointF      pointRight2(482.0f, 240.0f);
 
     graphics.DrawString(L"20", -1, &font, pointLeft2, &solidWhiteBrush);
     graphics.DrawString(L"20", -1, &font, pointRight2, &solidWhiteBrush);
