@@ -19,4 +19,21 @@
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\Images\Attitude indicator wing.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\Images\Attitude indicator right wing.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\Images\Attitude indicator with border.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\Images\right Attitude indicator with border.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\Images\arc.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
 </Project>

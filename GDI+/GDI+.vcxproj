@@ -143,6 +143,15 @@
   <ItemGroup>
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\Images\arc.png" />
+    <Image Include="..\Images\Attitude indicator right wing.png" />
+    <Image Include="..\Images\Attitude indicator wing.png">
+      <DeploymentContent>false</DeploymentContent>
+    </Image>
+    <Image Include="..\Images\Attitude indicator with border.png" />
+    <Image Include="..\Images\right Attitude indicator with border.png" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

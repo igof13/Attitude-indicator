@@ -75,7 +75,9 @@ VOID OnPaint(HDC hdc)
     int upsidedownTriangle = graphics.FillPolygon(&solidWhiteBrush, upsidedowTriangleArray, 3);
 
     //Arc
-    int arc = graphics.DrawArc(&whitePen, 359, 226, 180, 180, 217, 105);
+    Image arc(L"C:/Users/igof1/Desktop/C++/GDI+/Images/arc.png");
+    int drawArc = graphics.DrawImage(&arc, 327, 180);
+    //int arc = graphics.DrawArc(&whitePen, 359, 226, 180, 180, 217, 105);
 
     //Top Numbers
     FontFamily  fontFamily(L"Times New Roman");
@@ -113,8 +115,19 @@ VOID OnPaint(HDC hdc)
     int miniAirplaneBorder = graphics.DrawLines(&blackPen, miniAirplaneArray2, 5);
 
     //Wings
+   
+    Image leftWing(L"C:/Users/igof1/Desktop/C++/GDI+/Images/Attitude indicator with border.png");
+    int leftWingImage = graphics.DrawImage(&leftWing, 376, 297);
 
-
+    Image rightWing(L"C:/Users/igof1/Desktop/C++/GDI+/Images/right Attitude indicator with border.png");
+    int rightWingImage = graphics.DrawImage(&rightWing, 496, 297);
+   
+    //Drawing the wings with GDI+ functions
+    //Point leftWingArray[] = { Point(400, 300), Point(380, 305), Point(380, 295) };
+    //int wingLeftTriangle = graphics.FillPolygon(&solidYellowBrush, leftWingArray, 3);
+    //int wingLeftRect = graphics.FillRectangle(&solidYellowBrush, 395, 300, 20, 5);
+    //Point righttWingArray[] = { Point(494, 300), Point(514, 305), Point(514, 295)  };
+    //int wingRightTriangle = graphics.FillPolygon(&solidYellowBrush, righttWingArray, 3);
 }
 
 LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
