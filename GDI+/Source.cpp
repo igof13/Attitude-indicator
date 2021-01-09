@@ -20,24 +20,24 @@ VOID OnPaint(HDC hdc)
 
     //Brown rectangule
     SolidBrush solidBrownBrush(Color(250,149, 45, 0));
-    int brownRect = graphics.FillRectangle(&solidBrownBrush, 350, 280, 194, 90);
+    graphics.FillRectangle(&solidBrownBrush, 350, 280, 194, 90);
 
     //Blue rectangule
     SolidBrush solidBlueBrush(Color(255, 51, 102, 255));
-    int blueRect = graphics.FillRectangle(&solidBlueBrush, 350, 210, 194, 90);
+    graphics.FillRectangle(&solidBlueBrush, 350, 210, 194, 90);
 
     //Draw Center Line
-    int CenterLine = graphics.DrawLine(&whitePen, 350, 300, 544, 300);
+    graphics.DrawLine(&whitePen, 350, 300, 544, 300);
 
     // Top White marks 
-    int topSmallLine = graphics.DrawLine(&whitePen, 440, 295, 457, 295);
-    int topMiddLine = graphics.DrawLine(&whitePen, 432, 288, 466, 288);
-    int topSmallLine2 = graphics.DrawLine(&whitePen, 440, 281, 457, 281);
-    int topMarker10Line = graphics.DrawLine(&whitePen, 415, 274, 483, 274);
-    int topSmallLine3 = graphics.DrawLine(&whitePen, 440, 267, 457, 267);
-    int topMiddLine2 = graphics.DrawLine(&whitePen, 432, 260, 466, 260);
-    int topSmallLine4 = graphics.DrawLine(&whitePen, 440, 253, 457, 253);
-    int topMarker20Line = graphics.DrawLine(&whitePen, 415, 246, 483, 246);
+    graphics.DrawLine(&whitePen, 440, 295, 457, 295);
+    graphics.DrawLine(&whitePen, 432, 288, 466, 288);
+    graphics.DrawLine(&whitePen, 440, 281, 457, 281);
+    graphics.DrawLine(&whitePen, 415, 274, 483, 274);
+    graphics.DrawLine(&whitePen, 440, 267, 457, 267);
+    graphics.DrawLine(&whitePen, 432, 260, 466, 260);
+    graphics.DrawLine(&whitePen, 440, 253, 457, 253);
+    graphics.DrawLine(&whitePen, 415, 246, 483, 246);
 
     //Marks made with rectangule for reference
     /*SolidBrush solidWhiteBrush(Color(255, 255, 255, 255));
@@ -53,30 +53,30 @@ VOID OnPaint(HDC hdc)
     */
     
     //Bottom white marks
-    int bottomSmallLine = graphics.DrawLine(&whitePen, 440, 306, 457, 306);
-    int bottomMiddLine = graphics.DrawLine(&whitePen, 432, 313, 466, 313);
-    int bottomSmallLine2 = graphics.DrawLine(&whitePen, 440, 320, 457, 320);
-    int bottomMarker10Line = graphics.DrawLine(&whitePen, 415, 327, 483, 327);
-    int bottomSmallLine3 = graphics.DrawLine(&whitePen, 440, 334, 457, 334);
-    int bottomMiddLine2 = graphics.DrawLine(&whitePen, 432, 341, 466, 341);
-    int bottomSmallLine4 = graphics.DrawLine(&whitePen, 440, 348, 457, 348);
-    int bottomMarker20Line = graphics.DrawLine(&whitePen, 415, 355, 483, 355);
+    graphics.DrawLine(&whitePen, 440, 306, 457, 306);
+    graphics.DrawLine(&whitePen, 432, 313, 466, 313);
+    graphics.DrawLine(&whitePen, 440, 320, 457, 320);
+    graphics.DrawLine(&whitePen, 415, 327, 483, 327);
+    graphics.DrawLine(&whitePen, 440, 334, 457, 334);
+    graphics.DrawLine(&whitePen, 432, 341, 466, 341);
+    graphics.DrawLine(&whitePen, 440, 348, 457, 348);
+    graphics.DrawLine(&whitePen, 415, 355, 483, 355);
 
 
     //Top triangle
     Point triangleArray[] = { Point(448, 227), Point(439, 240), Point(457, 240) };
-    int topTriangle = graphics.FillPolygon(&solidWhiteBrush, triangleArray, 3);
+    graphics.FillPolygon(&solidWhiteBrush, triangleArray, 3);
     //Top triangle border
     Point triangleArray2[] = { Point(448, 227), Point(439, 240), Point(457, 240), Point(449, 227) };
-    int topTriangleBorder = graphics.DrawLines(&blackPen, triangleArray2, 4);
+    graphics.DrawLines(&blackPen, triangleArray2, 4);
 
     //Upsidedown triangle
     Point upsidedowTriangleArray[] = { Point(449, 224), Point(441, 217), Point(456, 217) };
-    int upsidedownTriangle = graphics.FillPolygon(&solidWhiteBrush, upsidedowTriangleArray, 3);
+    graphics.FillPolygon(&solidWhiteBrush, upsidedowTriangleArray, 3);
 
     //Arc
     Image arc(L"C:/Users/igof1/Desktop/C++/GDI+/Images/arc.png");
-    int drawArc = graphics.DrawImage(&arc, 327, 180);
+    graphics.DrawImage(&arc, 327, 180);
     //int arc = graphics.DrawArc(&whitePen, 359, 226, 180, 180, 217, 105);
 
     //Top Numbers
@@ -85,42 +85,42 @@ VOID OnPaint(HDC hdc)
     PointF      pointLeft(402.0f, 321);
     PointF      pointRight(482.0f, 321.0f);
 
-    int number10Left = graphics.DrawString(L"10", -1, &font, pointLeft, &solidWhiteBrush);
-    int number10Right = graphics.DrawString(L"10", -1, &font, pointRight, &solidWhiteBrush);
+    graphics.DrawString(L"10", -1, &font, pointLeft, &solidWhiteBrush);
+    graphics.DrawString(L"10", -1, &font, pointRight, &solidWhiteBrush);
 
     PointF      pointLeft2(402.0f, 349.0f);
     PointF      pointRight2(482.0f, 349.0f);
 
-    int number20Left = graphics.DrawString(L"20", -1, &font, pointLeft2, &solidWhiteBrush);
-    int number20Right = graphics.DrawString(L"20", -1, &font, pointRight2, &solidWhiteBrush);
+    graphics.DrawString(L"20", -1, &font, pointLeft2, &solidWhiteBrush);
+    graphics.DrawString(L"20", -1, &font, pointRight2, &solidWhiteBrush);
 
     //Bottom Numbers
     PointF      pointBottomLeft(402.0f, 268.0f);
     PointF      pointBottomRight(482.0f, 268.0f);
 
-    int number10LeftBottom = graphics.DrawString(L"10", -1, &font, pointBottomLeft, &solidWhiteBrush);
-    int number10RightBottom = graphics.DrawString(L"10", -1, &font, pointBottomRight, &solidWhiteBrush);
+    graphics.DrawString(L"10", -1, &font, pointBottomLeft, &solidWhiteBrush);
+    graphics.DrawString(L"10", -1, &font, pointBottomRight, &solidWhiteBrush);
 
     PointF      pointBottomLeft2(402.0f, 240.0f);
     PointF      pointBottomRight2(482.0f, 240.0f);
 
-    int number20LeftBottom = graphics.DrawString(L"20", -1, &font, pointBottomLeft2, &solidWhiteBrush);
-    int number20RightBottom = graphics.DrawString(L"20", -1, &font, pointBottomRight2, &solidWhiteBrush);
+    graphics.DrawString(L"20", -1, &font, pointBottomLeft2, &solidWhiteBrush);
+    graphics.DrawString(L"20", -1, &font, pointBottomRight2, &solidWhiteBrush);
 
    //Miniature Airplane
     Point miniAirplaneArray[] = { Point(449, 300), Point(399, 328), Point(449, 317), Point(499, 328) }; // X var = 2nd Point is 20 less then 1st. 4th point is 20 more then 1st
-    int miniAirplane = graphics.FillPolygon(&solidYellowBrush, miniAirplaneArray, 4);
+    graphics.FillPolygon(&solidYellowBrush, miniAirplaneArray, 4);
     //Miniature Airplane Border
     Point miniAirplaneArray2[] = { Point(449, 300), Point(399, 328), Point(449, 317), Point(499, 328), Point(449, 300) };
-    int miniAirplaneBorder = graphics.DrawLines(&blackPen, miniAirplaneArray2, 5);
+    graphics.DrawLines(&blackPen, miniAirplaneArray2, 5);
 
     //Wings
    
     Image leftWing(L"C:/Users/igof1/Desktop/C++/GDI+/Images/Attitude indicator with border.png");
-    int leftWingImage = graphics.DrawImage(&leftWing, 376, 297);
+    graphics.DrawImage(&leftWing, 376, 297);
 
     Image rightWing(L"C:/Users/igof1/Desktop/C++/GDI+/Images/right Attitude indicator with border.png");
-    int rightWingImage = graphics.DrawImage(&rightWing, 496, 297);
+    graphics.DrawImage(&rightWing, 496, 297);
    
     //Drawing the wings with GDI+ functions
     //Point leftWingArray[] = { Point(400, 300), Point(380, 305), Point(380, 295) };
